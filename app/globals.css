@@ -3,11 +3,15 @@
 @tailwind utilities;
 
 :root {
+  --blue: #3754FB;
+  --lite: #7B7583;
   --bg: #0B0415;
   --grad: linear-gradient(105deg, rgba(252, 1, 255, 0.80) -18.89%, #3754FB 92.09%);
+  --grad-r: linear-gradient(104deg, #3754FB 22.26%, #FC01FF 114.03%);
 
   --para: "Inter", sans-serif;
   --head: "Orbitron", sans-serif;
+  --code: "Fira Code", sans-serif;
 }
 
 body {

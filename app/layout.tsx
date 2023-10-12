@@ -1,9 +1,10 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter, Orbitron } from 'next/font/google'
+import { Inter, Orbitron, Fira_Code } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] });
 const orbitron = Orbitron({ subsets: ['latin'] });
+const fira_code = Fira_Code({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',

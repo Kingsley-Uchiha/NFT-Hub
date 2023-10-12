@@ -10,13 +10,19 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'grad': 'var(--grad)',
+        'grad-r': 'var(--grad-r)',
       },
       backgroundColor: {
         'bg': 'var(--bg)',
       },
+      textColor: {
+        'blue': 'var(--blue)',
+        'lite': 'var(--lite)',
+      },
       fontFamily: {
         'para': 'var(--para)',
         'head': 'var(--head)',
+        'code': 'var(--code)',
       },
     },
   },
