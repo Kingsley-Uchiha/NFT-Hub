@@ -1,48 +1,50 @@
 import Image from "next/image";
+import Link from 'next/link';
 
 export default function Navbar() {
-  return (
-    <nav className="">
+  return ( // 40 - 100
+    <nav className="py-10 px-24 flex justify-between items-center">
       <div className="logo">
-        <Image src="/logo.png" width={60} height={60} alt="NFT HUB's logo" />
+        <Image src="/logo.png" width={160} height={160} alt="NFT HUB's logo" />
       </div>
-      <div className="links">
+      <div className="links flex gap-20 items-center font-para font-bold text-[#C0C0C0]">
         <ul className="">
           <li>
-            <a href="#">Home</a>
+            <Link href="#">Home</Link>
           </li>
           <li>
-            <a href="#">Collection</a>
+            <Link href="#">Collection</Link>
           </li>
           <li>
-            <a href="#">About</a>
+            <Link href="#">About</Link>
           </li>
           <li>
-            <a href="#">Blog</a>
+            <Link href="#">Blog</Link>
           </li>
         </ul>
         <ul className="">
           <li>
-            <a href="#">
-              <Image src="/twitter.png" width={60} height={60} alt="Twitter" />
-            </a>
+            <Link href="#">
+              <Image src="/twitter.png" width={30} height={30} alt="Twitter" />
+            </Link>
           </li>
           <li>
-            <a href="#">
-              <Image src="/discord.png" width={60} height={60} alt="Discord" />
-            </a>
+            <Link href="#">
+              <Image src="/discord.png" width={30} height={30} alt="Discord" />
+            </Link>
           </li>
           <li>
-            <a href="#">
+            <Link href="#">
               <Image
                 src="/instagram.png"
-                width={60}
-                height={60}
+                width={30}
+                height={30}
                 alt="Instagram"
               />
-            </a>
+            </Link>
           </li>
         </ul>
+        <Link href="#" className="btn">Connect Wallet</Link>
       </div>
     </nav>
   );
