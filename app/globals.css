@@ -4,6 +4,7 @@
 
 :root {
   --bg: #0B0415;
+  --grad: linear-gradient(105deg, rgba(252, 1, 255, 0.80) -18.89%, #3754FB 92.09%);
 
   --para: "Inter", sans-serif;
   --head: "Orbitron", sans-serif;

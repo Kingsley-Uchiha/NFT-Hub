@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        
+        'grad': 'var(--grad)',
       },
       backgroundColor: {
         'bg': 'var(--bg)',

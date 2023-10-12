@@ -8,8 +8,8 @@ export default function Navbar() {
         <Image src="/logo.png" width={160} height={160} alt="NFT HUB's logo" />
       </div>
       <div className="links flex gap-20 items-center font-para font-bold text-[#C0C0C0]">
-        <ul className="">
-          <li>
+        <ul className="flex gap-8 items-center">
+          <li className="text-[#FFF]">
             <Link href="#">Home</Link>
           </li>
           <li>
@@ -22,7 +22,7 @@ export default function Navbar() {
             <Link href="#">Blog</Link>
           </li>
         </ul>
-        <ul className="">
+        <ul className="flex gap-8 items-center">
           <li>
             <Link href="#">
               <Image src="/twitter.png" width={30} height={30} alt="Twitter" />
@@ -44,7 +44,7 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-        <Link href="#" className="btn">Connect Wallet</Link>
+        <Link href="#" className="btn text-[#000] py-5 px-6 bg-grad">Connect Wallet</Link>
       </div>
     </nav>
   );
