@@ -4,10 +4,16 @@
 
 :root {
   --blue: #3754FB;
-  --lite: #7B7583;
+  --lite: rgba(217, 217, 217, 0.5);
+  --text: #d9d9d9;
   --bg: #0B0415;
+  --bg-blur: rgba(11, 4, 21, 0.9);
+  --bg-blurr: rgba(11, 4, 21, 0.6);
   --grad: linear-gradient(105deg, rgba(252, 1, 255, 0.80) -18.89%, #3754FB 92.09%);
   --grad-r: linear-gradient(104deg, #3754FB 22.26%, #FC01FF 114.03%);
+  --grad-t: linear-gradient(71deg, #2600FC 0%, #FF00EA 100%);
+  --border: 1px solid var(--grad, #FC01FF);
+  --stars: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/stars.png");
 
   --para: "Inter", sans-serif;
   --head: "Orbitron", sans-serif;
