@@ -90,7 +90,9 @@ export default function Hero() {
         </div>
         <div className="img"></div>
       </div>
-      <div className=""></div>
+      <div className="relative">
+        
+      </div>
     </header>
   );
 }
