@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import Carousel from '../carousel/page';
 
 export default function Hero() {
   return (
-    <header className="py-10 px-24 flex">
+    <header className="py-10 px-24 flex pt-7 relative w-full">
       <div className="txt">
         <div className="span inline-block text-xl">
           <span className="font-code font-extrabold text-blue">-------</span>{" "}
@@ -91,7 +92,7 @@ export default function Hero() {
         <div className="img"></div>
       </div>
       <div className="relative">
-        
+        <Carousel />
       </div>
     </header>
   );
