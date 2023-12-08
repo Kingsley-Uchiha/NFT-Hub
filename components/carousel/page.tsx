@@ -23,15 +23,41 @@ export default function Carousel() {
 
   return (
     <div
-      className={`trans-${activeCaro} pt-4 absolute top-4 right-24
+      className={`pt-4 absolute top-32 right-0
     carousel flex flex-col items-center justify-between overflow-hidden gap-5`}
     >
       {/* 42.85 */}
-      <div className="carousel-inner flex gap-3 items-center">
+      <div
+        className={`carousel-inner flex gap-0 items-center trans-${activeCaro}`}
+      >
         <div className="carousel-item blank"></div>
-        <CarouselItem activeCaro={activeCaro} index={1} image={"/car1.png"} />
-        <CarouselItem activeCaro={activeCaro} index={2} image={"/car2.png"} />
-        <CarouselItem activeCaro={activeCaro} index={3} image={"/car3.png"} />
+        <CarouselItem
+          activeCaro={activeCaro}
+          index={1}
+          image={"/car1.png"}
+          name="Hamlet Contemplates"
+          username="SalvadorDali"
+          likes={100}
+          time={{}}
+        />
+        <CarouselItem
+          activeCaro={activeCaro}
+          index={2}
+          image={"/car2.png"}
+          name="Triumphant Awakening"
+          username="Trista Francis"
+          likes={220}
+          time={{}}
+        />
+        <CarouselItem
+          activeCaro={activeCaro}
+          index={3}
+          image={"/car3.png"}
+          name="Living Vase 01 by Lanza"
+          username="Freddie Carpenter"
+          likes={90}
+          time={{}}
+        />
         <div className="carousel-item blank"></div>
       </div>
       <div className="controls flex items-center gap-5 font-code pt-5">

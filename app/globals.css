@@ -32,5 +32,19 @@ body {
 
 .active {
   scale: 1;
-  box-shadow: 0px 0px 6px 3px #d9d9d957;
+  box-shadow: 0px 0px 6px 3px #d9d9d925;
+}
+
+.carousel-inner {
+  transition: translate .3s;
+}
+
+.trans-3 {
+  translate: -340px 0;
+}
+.trans-2 {
+  translate: 0 0;
+}
+.trans-1 {
+  translate: 340px 0;
 }

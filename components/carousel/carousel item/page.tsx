@@ -1,10 +1,23 @@
 // import PropTypes from "prop-types";
 import Image from 'next/image';
+import { useState } from 'react';
 
-export default function CarouselItem({ activeCaro, index, image, name, username, likes }: any) {
+type CarouselItemProps = {
+  activeCaro: number,
+  index: number,
+  image: string,
+  name: string,
+  username: string,
+  likes: number,
+  time: object,
+}
+
+export default function CarouselItem({ activeCaro, index, image, name, username, likes, time }: CarouselItemProps) {
+  const [timer, setTimer] = useState(time);
+
   return (
     <div
-      className={`carousel-item font-para bg-gray-900 p-5 rounded-xl flex flex-col gap-5
+      className={`carousel-item font-para bg-gray-900 p-5 rounded-3xl flex flex-col gap-5
       ${activeCaro === index && "active"} slide`}
     >
       <div className="image relative flex items-center justify-center">
@@ -23,7 +36,7 @@ export default function CarouselItem({ activeCaro, index, image, name, username,
             width={18}
             height={18}
           />
-          <span className="text-sm">220{likes}</span>
+          <span className="text-sm">{likes}</span>
         </div>
         <div className="timer absolute bottom-2 py-1 px-3 bg-gray-950 rounded-xl flex gap-2 items-center">
           <Image
@@ -38,7 +51,7 @@ export default function CarouselItem({ activeCaro, index, image, name, username,
         <div className="bid"></div>
       </div>
       <div className="name flex justify-between items-center">
-        <h4>"T{name}...</h4>
+        <h4 className="text-xl">"{name}...</h4>
         <p className="bg-blue-900 rounded-xl py-1 px-3 text-xs">BSC</p>
       </div>
       <div className="user flex items-center gap-3">
@@ -46,7 +59,7 @@ export default function CarouselItem({ activeCaro, index, image, name, username,
         <div className="info flex items-center justify-between w-full">
           <div className="flex flex-col gap-2">
             <p className="text-xs font-light text-gray-500">Creator</p>
-            <p className="text-sm">T{username}</p>
+            <p className="text-sm">{username}</p>
           </div>
           <div className="flex flex-col gap-2">
             <p className="text-xs font-light text-gray-500">Current Bid</p>
