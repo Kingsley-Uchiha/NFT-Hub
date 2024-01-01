@@ -1,8 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 import CarouselItem from "./carousel item/page";
-
 
 export default function Carousel() {
   const [activeCaro, setActiveCaro] = useState(2);
@@ -19,7 +18,7 @@ export default function Carousel() {
       default:
         break;
     }
-  }
+  };
 
   return (
     <div
@@ -38,7 +37,12 @@ export default function Carousel() {
           name="Hamlet Contemplates"
           username="SalvadorDali"
           likes={100}
-          time={{}}
+          time={{
+            days: 0o5,
+            hrs: 12,
+            mins: 0o7,
+            secs: 45,
+          }}
         />
         <CarouselItem
           activeCaro={activeCaro}
@@ -47,7 +51,12 @@ export default function Carousel() {
           name="Triumphant Awakening"
           username="Trista Francis"
           likes={220}
-          time={{}}
+          time={{
+            days: 0o1,
+            hrs: 16,
+            mins: 25,
+            secs: 45,
+          }}
         />
         <CarouselItem
           activeCaro={activeCaro}
@@ -56,7 +65,12 @@ export default function Carousel() {
           name="Living Vase 01 by Lanza"
           username="Freddie Carpenter"
           likes={90}
-          time={{}}
+          time={{
+            days: 12,
+            hrs: 0o2,
+            mins: 47,
+            secs: 25,
+          }}
         />
         <div className="carousel-item blank"></div>
       </div>
