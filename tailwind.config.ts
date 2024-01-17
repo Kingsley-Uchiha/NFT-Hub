@@ -1,39 +1,44 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      "sm": "650px",
+      "md": "1140px",
+      "lg": "1600px",
+    },
     extend: {
       backgroundImage: {
-        'grad': 'var(--grad)',
-        'grad-r': 'var(--grad-r)',
-        'grad-t': 'var(--grad-t)',
-        'stars': 'var(--stars)',
+        grad: "var(--grad)",
+        "grad-r": "var(--grad-r)",
+        "grad-t": "var(--grad-t)",
+        stars: "var(--stars)",
       },
       backgroundColor: {
-        'bg': 'var(--bg)',
-        'bg-blur': 'var(--bg-blur)',
-        'bg-blurr': 'var(--bg-blurr)',
+        bg: "var(--bg)",
+        "bg-blur": "var(--bg-blur)",
+        "bg-blurr": "var(--bg-blurr)",
       },
       textColor: {
-        'blue': 'var(--blue)',
-        'text': 'var(--text)',
-        'lite': 'var(--lite)',
+        blue: "var(--blue)",
+        text: "var(--text)",
+        lite: "var(--lite)",
       },
       fontFamily: {
-        'para': 'var(--para)',
-        'head': 'var(--head)',
-        'code': 'var(--code)',
+        para: "var(--para)",
+        head: "var(--head)",
+        code: "var(--code)",
       },
       borderColor: {
-        '--grad': 'var(--grad)',
+        "--grad": "var(--grad)",
       },
     },
   },
   plugins: [],
-}
+};
 export default config;

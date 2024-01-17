@@ -89,8 +89,8 @@ export default function Hero() {
             <h3 className="font-para text-lite text-xs">Community mambers</h3>
           </div>
         </div>
-        <div className="img"></div>
       </div>
+      
       <Carousel />
     </header>
   );

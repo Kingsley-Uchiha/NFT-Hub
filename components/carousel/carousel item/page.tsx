@@ -1,36 +1,59 @@
 // import PropTypes from "prop-types";
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 type CarouselItemProps = {
-  activeCaro: number
-  index: 1 | 2 | 3
-  image: string
-  name: string
-  username: string
-  likes: number
+  activeCaro: number;
+  index: 1 | 2 | 3;
+  image: string;
+  name: string;
+  username: string;
+  likes: number;
   time: {
-    days: number
-    hrs: number
-    mins: number
-    secs: number
-  }
-}
+    days: number;
+    hrs: number;
+    mins: number;
+    secs: number;
+  };
+};
 
 export default function CarouselItem(props: CarouselItemProps) {
   const [timer, setTimer] = useState(props.time);
+  const [like, setLike] = useState(false);
 
   const countDown = () => {
-    const secM = 60;
-    const minM = 60;
-    const hrsM = 24;
+    const setTime = (time: string, value: number) => {
+      setTimer((val) => ({ ...val, [time]: value }))
+    }
 
     if (timer.secs >= 1)
-      setTimer(val => ({ ...val, secs: timer.secs - 1 }));
+      setTime("secs", timer.secs - 1);
     else {
-      setTimer((val) => ({ ...val, secs: secM }));
+      setTime("secs", 59);
+
+      if (timer.mins >= 1)
+        setTime("mins", timer.mins - 1);
+      else {
+        setTime("mins", 59);
+
+        if (timer.hrs >= 1)
+          setTime("hrs", timer.hrs - 1);
+        else {
+          setTime("hrs", 23);
+        }
+      }
     }
-  }
+  };
+
+  useEffect(() => {
+    const counter = setInterval(() => {
+      countDown();
+    }, 1000);
+
+    return () => {
+      clearInterval(counter);
+    };
+  }, [timer]);
 
   return (
     <div
@@ -45,7 +68,9 @@ export default function CarouselItem(props: CarouselItemProps) {
           width={300}
           height={300}
         />
-        <div className="likes absolute top-3 right-3 bg-gray-950 py-1 px-3 rounded-xl flex gap-2 items-center">
+        <div
+          onClick={() => setLike(prev => !prev)}
+          className={`${like ? "text-rose-700" : ""} active:scale-75 transition likes absolute top-3 right-3 bg-gray-950 py-1 px-3 rounded-xl flex gap-2 items-center cursor-pointer`}>
           <Image
             className="rounded-2xl"
             src="/heart.png"
@@ -64,10 +89,10 @@ export default function CarouselItem(props: CarouselItemProps) {
             height={20}
           />
           <span>
-            {String(timer.days).length < 2 ? "0" + timer.days : timer.days} :
-            {String(timer.hrs).length < 2 ? "0" + timer.hrs : timer.hrs} :
-            {String(timer.mins).length < 2 ? "0" + timer.mins : timer.mins} :
-            {String(timer.secs).length < 2 ? "0" + timer.secs : timer.secs}
+            {(String(timer.days).length < 2) ? ("0" + timer.days) : (timer.days)} :
+            {(String(timer.hrs).length < 2) ? ("0" + timer.hrs) : (timer.hrs)} :
+            {(String(timer.mins).length < 2) ? ("0" + timer.mins) : (timer.mins)} :
+            {(String(timer.secs).length < 2) ? ("0" + timer.secs) : (timer.secs)}
           </span>
         </div>
         <div className="bid"></div>
@@ -92,14 +117,3 @@ export default function CarouselItem(props: CarouselItemProps) {
     </div>
   );
 }
-
-// CarouselItem.defaultProps = {
-//   activeCaro: 1
-// };
-
-// CarouselItem.protoTypes = {
-//   activeCaro: PropTypes.number,
-//   index: PropTypes.number,
-//   image: PropTypes.string,
-//   name: PropTypes.string
-// };

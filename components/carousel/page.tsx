@@ -69,11 +69,12 @@ export default function Carousel() {
             days: 12,
             hrs: 0o2,
             mins: 47,
-            secs: 25,
+            secs: 22,
           }}
         />
         <div className="carousel-item blank"></div>
       </div>
+      
       <div className="controls flex items-center gap-5 font-code pt-5">
         <div
           className="ctrl cursor-pointer bg-gray-900 w-10 h-10 rounded-full flex justify-center items-center"
