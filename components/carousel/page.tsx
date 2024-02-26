@@ -20,6 +20,18 @@ export default function Carousel() {
     }
   };
 
+  const caroCards = [
+    {
+      name: "Hamlet Contemplates",
+      username: "SalvadorDali",
+      likes: 100,
+      time: { days: 0o5, hrs: 12, mins: 0o7, secs: 45 },
+    },
+    {
+      name: "",
+    }
+  ];
+
   return (
     <div
       className={`pt-4 absolute top-32 right-0
